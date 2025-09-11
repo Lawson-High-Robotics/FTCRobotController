@@ -1,11 +1,10 @@
 package org.firstinspires.ftc.teamcode;
 
-import static org.firstinspires.ftc.teamcode.ServoController.setServoDegrees;
+import static org.firstinspires.ftc.teamcode.ServoUtilities.calculateServoDegrees;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
-import org.firstinspires.ftc.teamcode.ServoController;
 
 @TeleOp
 public class TestMode extends LinearOpMode {
@@ -34,8 +33,7 @@ public class TestMode extends LinearOpMode {
                 position -= 1;
             }
 
-
-            setServoDegrees(servo, position);
+            servo.setPosition(calculateServoDegrees(position));
         }
     }
 }
